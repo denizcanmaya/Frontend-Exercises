@@ -24,14 +24,21 @@
         padding: 1rem;
         border-radius: .7rem;}
 
-        .bmrSonucDiv {
+        #bmrSonucDiv {
           padding: 1rem;
           border-radius: .7rem;
+          display: none;
+        }
+
+        .width {
+          display: flex;
+          flex-direction: column;
+          max-width: 450px;
         }
     </style>
   </head>
   <body class="bg-light">
-    <div class="row gap-3 container text-white mx-auto mt-5">
+    <div class="row gap-3 container text-white mx-auto mt-5 width">
       <div class="col bmr-form bg-dark">
         <form action="#">
           <div class="head"><h1 class="fs-2">BMH Hesaplayıcı</h1></div>
@@ -92,9 +99,8 @@
           </div>
         </form>
       </div>
-      <div class="col bg-dark bmrSonucDiv">
+      <div class="col bg-dark" id="bmrSonucDiv">
         <div id="bmrSonuc"></div>
-        <p class="lead mt-5">BMR (Bazal Metabolizma Hızı), vücudunuzun tamamen dinlenik haldeyken, yani uyurken ya da hareketsiz bir şekilde yatarken, hayatta kalmak için ihtiyaç duyduğu minimum enerji miktarını ifade eder. Bu enerji, temel yaşam fonksiyonlarını (kalp atışı, nefes alma, vücut sıcaklığını koruma, hücre yenilenmesi gibi) sürdürmek için gereklidir.</p>
       </div>
     </div>
     <!-- JavaScript -->
