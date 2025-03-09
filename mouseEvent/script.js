@@ -40,7 +40,7 @@ function createHeart(x, y) {
    spanElement.style.top = y + "px";
    body.appendChild(spanElement);
    
-   const size = Math.random() * 100;
+   const size = Math.random() * 300;
    spanElement.style.width = size + "px";
    spanElement.style.height = size + "px";
 
