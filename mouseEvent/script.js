@@ -4,19 +4,34 @@ body.addEventListener("mousemove", (event) => {
    createHeart(event.offsetX, event.offsetY);
 });
 
-body.addEventListener("touchstart", handleTouch, {passive: false});
-body.addEventListener("touchmove", handleTouch, {passive: false});
+
+let isTouch = false;
+
+document.body.addEventListener('touchstart', function(e) {
+   isTouch = true;
+   handleTouch(e);
+}, { passive: false });
+
+document.body.addEventListener('touchmove', function(e) {
+   if (isTouch) {
+      handleTouch(e);
+   }
+}, { passive: false });
+
+document.body.addEventListener('touchend', function() {
+   isTouch = false;
+}, { passive: false });
 
 function handleTouch(event) {
    event.preventDefault();
    
-   const touch = event.touches[0];
-
-   const rect = body.getBoundingClientRect();
-   const touchX = touch.clientX - rect.left;
-   const touchY = touch.clientY - rect.top;
-   
-   createHeart(touchX, touchY);
+   if (event.touches && event.touches.length > 0) {
+      const touch = event.touches[0];
+      const touchX = touch.clientX;
+      const touchY = touch.clientY;
+      
+      createHeart(touchX, touchY);
+   }
 }
 
 function createHeart(x, y) {
