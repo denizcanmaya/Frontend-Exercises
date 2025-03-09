@@ -20,7 +20,7 @@ body {
 }
 
 span {
-    background: url(gidduk.png);
+    background: url(heart.png);
     width: 100px;
     height: 100px;
     position: absolute;
@@ -29,7 +29,7 @@ span {
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    animation: animate 30s;
+    animation: animate 6s;
 }
 
 @keyframes animate {
