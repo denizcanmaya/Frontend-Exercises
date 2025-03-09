@@ -4,15 +4,20 @@ body.addEventListener("mousemove", (event) => {
    createHeart(event.offsetX, event.offsetY);
 });
 
-body.addEventListener("touchmove", (event) => {
+body.addEventListener("touchstart", handleTouch, {passive: false});
+body.addEventListener("touchmove", handleTouch, {passive: false});
+
+function handleTouch(event) {
    event.preventDefault();
    
    const touch = event.touches[0];
-   const touchX = touch.clientX;
-   const touchY = touch.clientY;
+
+   const rect = body.getBoundingClientRect();
+   const touchX = touch.clientX - rect.left;
+   const touchY = touch.clientY - rect.top;
    
    createHeart(touchX, touchY);
-}, { passive: false });
+}
 
 function createHeart(x, y) {
    const spanElement = document.createElement("span");
