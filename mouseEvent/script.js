@@ -1,17 +1,30 @@
 const body = document.querySelector("body");
 
 body.addEventListener("mousemove", (event) => {
-   const xPos = event.offsetX;
-   const yPos = event.offsetY;
+   createHeart(event.offsetX, event.offsetY);
+});
+
+body.addEventListener("touchmove", (event) => {
+   event.preventDefault();
+   
+   const touch = event.touches[0];
+   const touchX = touch.clientX;
+   const touchY = touch.clientY;
+   
+   createHeart(touchX, touchY);
+}, { passive: false });
+
+function createHeart(x, y) {
    const spanElement = document.createElement("span");
-   spanElement.style.left = xPos + "px";
-   spanElement.style.top = yPos + "px";
+   spanElement.style.left = x + "px";
+   spanElement.style.top = y + "px";
    body.appendChild(spanElement);
+   
    const size = Math.random() * 100;
    spanElement.style.width = size + "px";
    spanElement.style.height = size + "px";
 
-   setTimeout( () => {
-    spanElement.remove();
-   },3000);
-});
+   setTimeout(() => {
+      spanElement.remove();
+   }, 3000);
+}
