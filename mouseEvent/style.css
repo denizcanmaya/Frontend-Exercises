@@ -29,7 +29,7 @@ span {
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    animation: animate 6s;
+    animation: animate 30s;
 }
 
 @keyframes animate {
