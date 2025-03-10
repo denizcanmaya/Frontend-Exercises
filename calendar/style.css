@@ -24,6 +24,7 @@ body {
     border-radius: 10px;
     background-color: 
     #fff;
+    
 }
 
 .month-name {
@@ -52,3 +53,28 @@ body {
     font-size: 1.5rem;
     margin-bottom: 2rem;
 }
+
+.fa-sun {
+    position: relative;
+    float:right;
+    top: -45px;
+    left: -10px;
+    font-size: 1.5rem;
+    color: #fff;
+    transition: .3s ease-in-out;
+}
+
+.fa-sun:hover {
+color:  black;
+cursor: pointer;
+
+}
+
+.fa-sun:active {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.dark {
+    background-color: black !important;
+}
+

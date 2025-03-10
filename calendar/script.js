@@ -2,6 +2,14 @@ const monthEl = document.getElementById("month-name");
 const dayEl = document.getElementById("day-name");
 const dayNumber = document.getElementById("day-number");
 const year = document.getElementById("year");
+const darkMode = document.querySelector(".fa-sun");
+
+darkMode.addEventListener("click", (e) => {
+    e.preventDefault();
+    monthEl.classList.toggle("dark")
+})
+
+
 
 datePrint();
 
